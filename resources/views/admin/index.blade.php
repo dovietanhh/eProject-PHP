@@ -332,6 +332,24 @@
                 
               </ul>
             </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-table"></i>
+                <p>
+                ORDER
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/admin/orderdetails/showOrderdetail" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Danh sách Order</p>
+                  </a>
+                </li>
+                
+              </ul>
+            </li>
             <li class="nav-header">EXAMPLES</li>
             <li class="nav-item">
               <a href="pages/calendar.html" class="nav-link">

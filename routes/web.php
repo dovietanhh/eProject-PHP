@@ -5,6 +5,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ShoesCategoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -76,3 +77,10 @@ Route::post("/admin/employees/update_roles/{id}",[AdminController::class,"update
 
 Route::get('/admin/customers/showCustomers',    [CustomerController::class, "index"]);
 Route::delete('/admin/customers/deleteCustomer/{id}',    [CustomerController::class, "destroy"]);
+
+
+
+//order 
+
+Route::get('/admin/orderdetails/showOrderdetail',    [OrderController::class, "index"]);
+Route::delete('/admin/orderdetails/deleteOrderdetail/{id}',    [CustomerController::class, "destroy"]);

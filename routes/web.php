@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ShoesCategoryController;
 use Illuminate\Support\Facades\Route;
@@ -65,3 +66,13 @@ Route::delete('/admin/employees/deleteEmployee/{id}',    [EmployeeController::cl
 
 //role
 Route::post("/admin/employees/update_roles/{id}",[AdminController::class,"updateRole"]);
+
+
+
+
+
+
+//employees
+
+Route::get('/admin/customers/showCustomers',    [CustomerController::class, "index"]);
+Route::delete('/admin/customers/deleteCustomer/{id}',    [CustomerController::class, "destroy"]);

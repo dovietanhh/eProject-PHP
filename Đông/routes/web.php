@@ -84,3 +84,53 @@ Route::delete('/admin/customers/deleteCustomer/{id}',    [CustomerController::cl
 
 Route::get('/admin/orderdetails/showOrderdetail',    [OrderController::class, "index"]);
 Route::delete('/admin/orderdetails/deleteOrderdetail/{id}',    [CustomerController::class, "destroy"]);
+
+//Men Page
+Route::get('/men', function () {
+    return view('men');
+})->name('men');
+
+//Product Detail Page
+Route::get('/product_detail', function () {
+    return view('product_detail');
+})->name('product_detail');
+
+//Women Page
+Route::get('/women', function () {
+    return view('women');
+})->name('women');
+
+//About Page
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+//Add to wishlist Page
+Route::get('/add_to_wishlist', function () {
+    return view('add_to_wishlist');
+})->name('add_to_wishlist');
+
+//Cart Page
+Route::get('/cart', function () {
+    return view('cart');
+})->name('cart');
+
+//Checkout Page
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout');
+
+//Contact Page
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+//Order Complete Page
+Route::get('/order_complete', function () {
+    return view('order_complete');
+})->name('order_complete');
+
+//Home Page
+Route::get('/welcome', function () {
+    return view('welcome');
+})->name('welcome');

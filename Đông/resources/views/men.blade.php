@@ -61,9 +61,9 @@
 		         </div>
 					<div class="row">
 						<div class="col-sm-12 text-left menu-1">
-							<ul>
-								<li class="active"><a href="{{ route('welcome') }}">Home</a></li>
-								<li class="has-dropdown">
+						<ul>
+								<li><a href="{{ route('welcome') }}">Home</a></li>
+								<li class="has-dropdown active">
 									<a href="{{ route('men') }}">Men</a>
 									<ul class="dropdown">
 										<li><a href="{{ route('product_detail') }}">Product Detail</a></li>
@@ -105,91 +105,56 @@
 				</div>
 			</div>
 		</nav>
-		<aside id="colorlib-hero">
-			<div class="flexslider">
-				<ul class="slides">
-			   	<li style="background-image: url(images/img_bg_1.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
-				   				<div class="slider-text-inner">
-				   					<div class="desc">
-					   					<h1 class="head-1">Men's</h1>
-					   					<h2 class="head-2">Shoes</h2>
-					   					<h2 class="head-3">Collection</h2>
-					   					<p class="category"><span>New trending shoes</span></p>
-					   					<p><a href="#" class="btn btn-primary">Shop Collection</a></p>
-				   					</div>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			   	<li style="background-image: url(images/img_bg_2.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
-				   				<div class="slider-text-inner">
-				   					<div class="desc">
-					   					<h1 class="head-1">Huge</h1>
-					   					<h2 class="head-2">Sale</h2>
-					   					<h2 class="head-3"><strong class="font-weight-bold">50%</strong> Off</h2>
-					   					<p class="category"><span>Big sale sandals</span></p>
-					   					<p><a href="#" class="btn btn-primary">Shop Collection</a></p>
-				   					</div>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			   	<li style="background-image: url(images/img_bg_3.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
-				   				<div class="slider-text-inner">
-				   					<div class="desc">
-					   					<h1 class="head-1">New</h1>
-					   					<h2 class="head-2">Arrival</h2>
-					   					<h2 class="head-3">up to <strong class="font-weight-bold">30%</strong> off</h2>
-					   					<p class="category"><span>New stylish shoes for men</span></p>
-					   					<p><a href="#" class="btn btn-primary">Shop Collection</a></p>
-				   					</div>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			  	</ul>
-		  	</div>
-		</aside>
-		<div class="colorlib-intro">
+
+		<div class="breadcrumbs">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-12 text-center">
-						<h2 class="intro">It started with a simple idea: Create quality, well-designed products that I wanted myself.</h2>
+					<div class="col">
+						<p class="bread"><span><a href="index.html">Home</a></span> / <span>Men</span></p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="colorlib-product">
-			<div class="container-fluid">
+
+		<div class="breadcrumbs-two">
+			<div class="container">
 				<div class="row">
-					<div class="col-sm-6 text-center">
+					<div class="col">
+						<div class="breadcrumbs-img" style="background-image: url(images/cover-img-1.jpg);">
+							<h2>Men's</h2>
+						</div>
+						<div class="menu text-center">
+							<p><a href="#">New Arrivals</a> <a href="#">Best Sellers</a> <a href="#">Extended Widths</a> <a href="#">Sale</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="colorlib-featured">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 text-center">
 						<div class="featured">
-							<a href="#" class="featured-img" style="background-image: url(images/men.jpg);"></a>
-							<div class="desc">
-								<h2><a href="#">Shop Men's Collection</a></h2>
+							<div class="featured-img featured-img-2" style="background-image: url(images/men.jpg);">
+								<h2>Casuals</h2>
+								<p><a href="#" class="btn btn-primary btn-lg">Shop now</a></p>
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 text-center">
+					<div class="col-sm-4 text-center">
 						<div class="featured">
-							<a href="#" class="featured-img" style="background-image: url(images/women.jpg);"></a>
-							<div class="desc">
-								<h2><a href="#">Shop Women's Collection</a></h2>
+							<div class="featured-img featured-img-2" style="background-image: url(images/women.jpg);">
+								<h2>Dress</h2>
+								<p><a href="#" class="btn btn-primary btn-lg">Shop now</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4 text-center">
+						<div class="featured">
+							<div class="featured-img featured-img-2" style="background-image: url(images/item-11.jpg);">
+								<h2>Sports</h2>
+								<p><a href="#" class="btn btn-primary btn-lg">Shop now</a></p>
 							</div>
 						</div>
 					</div>
@@ -200,12 +165,12 @@
 		<div class="colorlib-product">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-8 offset-sm-2 text-center colorlib-heading">
-						<h2>Best Sellers</h2>
+					<div class="col-sm-8 offset-sm-2 text-center colorlib-heading colorlib-heading-sm">
+						<h2>View All Products</h2>
 					</div>
 				</div>
 				<div class="row row-pb-md">
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-1.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -216,7 +181,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-2.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -227,7 +192,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-3.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -238,7 +203,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-4.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -250,7 +215,7 @@
 						</div>
 					</div>
 					<div class="w-100"></div>
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-5.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -261,7 +226,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-6.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -272,7 +237,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-7.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -283,7 +248,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-8.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -295,7 +260,7 @@
 						</div>
 					</div>
 					<div class="w-100"></div>
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-9.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -306,7 +271,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-10.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -317,7 +282,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-11.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -328,7 +293,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-12.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -340,7 +305,7 @@
 						</div>
 					</div>
 					<div class="w-100"></div>
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-13.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -351,7 +316,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-14.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -362,7 +327,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-15.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -373,7 +338,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 mb-4 text-center">
+					<div class="col-md-3 col-lg-3 mb-4 text-center">
 						<div class="product-entry border">
 							<a href="#" class="prod-img">
 								<img src="images/item-16.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
@@ -387,7 +352,17 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<p><a href="#" class="btn btn-primary btn-lg">Shop All Products</a></p>
+						<div class="block-27">
+		               <ul>
+			               <li><a href="#"><i class="ion-ios-arrow-back"></i></a></li>
+		                  <li class="active"><span>1</span></li>
+		                  <li><a href="#">2</a></li>
+		                  <li><a href="#">3</a></li>
+		                  <li><a href="#">4</a></li>
+		                  <li><a href="#">5</a></li>
+		                  <li><a href="#"><i class="ion-ios-arrow-forward"></i></a></li>
+		               </ul>
+		            </div>
 					</div>
 				</div>
 			</div>
@@ -500,6 +475,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="ion-ios-arrow-up"></i></a>
 	</div>
+	
 	
 	<!-- jQuery -->
 	<script src="{{ asset('js/jquery.min.js') }}"></script>

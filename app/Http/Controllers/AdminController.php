@@ -19,7 +19,7 @@ class AdminController extends Controller
     public function login(Request $request)
     {
         $email = $request->email;
-        $password = $request->password;
+        $password = md5($request->password);
         $emp = DB::table('employee')->where("email", $email)->where("password", $password)->first();
         if ($emp !=null) {
             $minutes = 60;

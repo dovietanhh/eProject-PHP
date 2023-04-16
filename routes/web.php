@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('client.home');
 });
 Route::get('/dashboard',    [AdminController::class, "index"]);
 Route::get('/AdminLogin',    [AdminController::class, "Beforelogin"]);
@@ -87,4 +87,58 @@ Route::delete('/admin/customers/deleteCustomer/{id}',    [CustomerController::cl
 //order 
 
 Route::get('/admin/orderdetails/showOrderdetail',    [OrderController::class, "index"]);
+// <<<<<<< HEAD:routes/web.php
 Route::delete('/admin/orderdetails/deleteOrderdetail/{id}',    [OrderController::class, "destroy"]);
+// =======
+Route::delete('/admin/orderdetails/deleteOrderdetail/{id}',    [CustomerController::class, "destroy"]);
+
+//Men Page
+Route::get('/men', function () {
+    return view('client.men');
+})->name('men');
+
+//Product Detail Page
+Route::get('/product_detail', function () {
+    return view('product_detail');
+})->name('product_detail');
+
+//Women Page
+Route::get('/women', function () {
+    return view('client.women');
+})->name('women');
+
+//About Page
+Route::get('/about', function () {
+    return view('client.about');
+})->name('about');
+
+//Add to wishlist Page
+Route::get('/add_to_wishlist', function () {
+    return view('add_to_wishlist');
+})->name('add_to_wishlist');
+
+//Cart Page
+Route::get('/cart', function () {
+    return view('client.cart');
+})->name('cart');
+
+//Checkout Page
+Route::get('/checkout', function () {
+    return view('client.checkout');
+})->name('checkout');
+
+//Contact Page
+Route::get('/contact', function () {
+    return view('client.contact');
+})->name('contact');
+
+//Order Complete Page
+Route::get('/order_complete', function () {
+    return view('client.order_complete');
+})->name('order_complete');
+
+//Home Page
+Route::get('/welcome', function () {
+    return view('welcome');
+})->name('welcome');
+// >>>>>>> 1b91cd5de4c098db1d90469263b80cee649e8b7f:Đông/routes/web.php

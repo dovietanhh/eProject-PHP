@@ -69,7 +69,7 @@ class EmployeeController extends Controller
         $emp->phone = $request->phone;
         $emp->gender = $request->gen;
         $emp->password = md5($request->password);
-
+        
         $emp->role_id = 0;
         $emp->dob = Carbon::parse($request->dob)->format("Y-m-d");
 
@@ -129,7 +129,15 @@ class EmployeeController extends Controller
             "fullname"=>"required|string",
             "username"=>"required|string",
             "email"=>"required|email|max:100|unique:employee,email",
-           
+            'password' => [
+                'required',
+                'string',
+                'min:10',             // must be at least 10 characters in length
+                'regex:/[a-z]/',      // must contain at least one lowercase letter
+                'regex:/[A-Z]/',      // must contain at least one uppercase letter
+                'regex:/[0-9]/',      // must contain at least one digit
+                'regex:/[@$!%*#?&]/', // must contain a special character
+            ],
             "phone"=>["required","regex:/^(84|0[3|5|7|8|9])+([0-9]{8})$/"],//regex phone VN
             "dob"=>"required",
             "gen"=>"required|in:1,0"

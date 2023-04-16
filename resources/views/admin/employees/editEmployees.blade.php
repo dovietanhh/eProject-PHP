@@ -72,8 +72,9 @@
                             </div>
 
                             <div class="form-group">
+                            <label for="exampleInputPassword1">Password:</label>
                       
-                                <input hidden type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password" name="password" value="{{$employees->password}}">
+                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter password" name="password" value="{{($employees->password)}}">
                                 
                             </div>
                             

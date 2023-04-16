@@ -63,6 +63,10 @@ class OrderController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $or = OrderModel::find($id);
+        $or->delete();
+        Session()->flash("success", "Dữ liệu được xóa thành công!!!");
+
+        return redirect()->action([CustomerController::class, "index"]);
     }
 }

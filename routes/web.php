@@ -23,7 +23,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin',    [AdminController::class, "index"]);
+Route::get('/dashboard',    [AdminController::class, "index"]);
+Route::get('/AdminLogin',    [AdminController::class, "Beforelogin"]);
+Route::post('/afterLogin',    [AdminController::class, "login"]);
+Route::get('/logoutAdmin',    [AdminController::class, "logoutAdmin"]);
+
 
 
 //category
@@ -83,4 +87,4 @@ Route::delete('/admin/customers/deleteCustomer/{id}',    [CustomerController::cl
 //order 
 
 Route::get('/admin/orderdetails/showOrderdetail',    [OrderController::class, "index"]);
-Route::delete('/admin/orderdetails/deleteOrderdetail/{id}',    [CustomerController::class, "destroy"]);
+Route::delete('/admin/orderdetails/deleteOrderdetail/{id}',    [OrderController::class, "destroy"]);

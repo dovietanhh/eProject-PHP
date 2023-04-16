@@ -11,7 +11,7 @@
             <div class="col-md">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Danh sách khách hàng</h3>
+                        <h3 class="card-title">Danh sách Order</h3>
 
 
                     </div>
@@ -61,8 +61,8 @@
                                     <td style="max-width: 100px;"><img src="{{asset('public/image/'.$row->avatar)}}" class="w-100" alt="..."></td>
                                     <td class="d-flex " style="align-items: center;">
                                         <!-- <a href="/admin/customers/editCustomer/{{$row->id}}" class="btn bg-lime"><i class="fas fa-edit"></i></a> -->
-                                        <form action="/admin/orders/deleteOrderdetail/{{$row->orderdetail_id}}" method="post" onsubmit="return confirm('Bạn có muốn xóa bản ghi {{$row->orderdetail_id}} này không???')">
-                                            @method("delete")
+                                        <form action="/admin/orderdetails/deleteOrderdetail/{{$row->orderdetail_id}}" method="post" onsubmit="return confirm('Bạn có muốn xóa bản ghi {{$row->orderdetail_id}} này không???')">
+                                            @method("delete")  
                                             @csrf
                                             <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                         </form>

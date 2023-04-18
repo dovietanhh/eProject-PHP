@@ -5,6 +5,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ShoesCategoryController;
 use Illuminate\Support\Facades\Route;
@@ -20,9 +21,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('client.home');
-});
+Route::get('/', [HomeController::class,"index"]);
+
 Route::get('/dashboard',    [AdminController::class, "index"]);
 Route::get('/AdminLogin',    [AdminController::class, "Beforelogin"]);
 Route::post('/afterLogin',    [AdminController::class, "login"]);
@@ -99,7 +99,7 @@ Route::get('/men', function () {
 
 //Product Detail Page
 Route::get('/product_detail', function () {
-    return view('product_detail');
+    return view('client.product_detail');
 })->name('product_detail');
 
 //Women Page
@@ -114,7 +114,7 @@ Route::get('/about', function () {
 
 //Add to wishlist Page
 Route::get('/add_to_wishlist', function () {
-    return view('add_to_wishlist');
+    return view('client.add_to_wishlist');
 })->name('add_to_wishlist');
 
 //Cart Page
@@ -132,13 +132,15 @@ Route::get('/contact', function () {
     return view('client.contact');
 })->name('contact');
 
+//detail_product
+Route::get('/detail-product/{id}',[HomeController::class,"ProductDetai"]);
+
+
 //Order Complete Page
 Route::get('/order_complete', function () {
     return view('client.order_complete');
 })->name('order_complete');
 
 //Home Page
-Route::get('/welcome', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/welcome', [HomeController::class,"index"]);
 // >>>>>>> 1b91cd5de4c098db1d90469263b80cee649e8b7f:Đông/routes/web.php

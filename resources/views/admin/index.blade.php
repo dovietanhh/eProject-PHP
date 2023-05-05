@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Dashboard</title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -31,7 +31,7 @@
   <!-- faltdate -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_orange.css">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed')}}">
@@ -229,13 +229,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="/admin/categories/showCategory" class="nav-link">
+                  <a href="{{route('Category')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Danh sách category</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="/admin/categories/addcategory" class="nav-link">
+                  <a href="{{route('addCategory')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Thêm category</p>
                   </a>
@@ -252,13 +252,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="/admin/brands/showBrand" class="nav-link">
+                  <a href="{{route('Brand')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Danh sách brand</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="/admin/brands/addBrand" class="nav-link">
+                  <a href="{{route('addBrand')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Thêm brand</p>
                   </a>
@@ -287,7 +287,18 @@
                     <p>Thêm giày</p>
                   </a>
                 </li>
-
+                <li class="nav-item">
+                  <a href="{{route('size')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Số Lượng Giày</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{route('addsize')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Thêm size và số lượng</p>
+                  </a>
+                </li>
               </ul>
             </li>
             <li class="nav-item">
@@ -311,47 +322,70 @@
                     <p>Thêm nhân viên</p>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a href="pages/forms/editors.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Editors</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/forms/validation.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Validation</p>
-                  </a>
-                </li>
+                
               </ul>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-table"></i>
+                <i class="nav-icon fas fa-edit"></i>
                 <p>
-                  Tables
+                  Customers
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/tables/simple.html" class="nav-link">
+                  <a href="{{route('Customers')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Simple Tables</p>
+                    <p>Danh sách khách hàng</p>
+                  </a>
+                </li>
+                
+                
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-table"></i>
+                <p>
+                  Thêm ảnh cho SP
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/admin/shoes/shoespic" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Hiển thị tất cả</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/tables/data.html" class="nav-link">
+                  <a href="/admin/shoes/addshoespicOne" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>DataTables</p>
+                    <p>Thêm ảnh cho sản phẩm</p>
                   </a>
                 </li>
+                
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Order
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/tables/jsgrid.html" class="nav-link">
+                  <a href="{{route('Order')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>jsGrid</p>
+                    <p>Danh sách Order</p>
                   </a>
                 </li>
+                
+                
               </ul>
             </li>
             <li class="nav-header">EXAMPLES</li>

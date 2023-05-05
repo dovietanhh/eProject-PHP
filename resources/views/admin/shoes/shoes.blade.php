@@ -23,7 +23,6 @@
                                     <th>Avatar</th>
                                     <th>Discription</th>
                                     <th>Price</th>
-                                    <th>Quantity</th>
                                     <th>Category</th>
                                     <th>Brand</th>
                                     <th>Control</th>
@@ -37,10 +36,10 @@
                                     <td style="max-width: 100px;"><img src="{{asset('public/image/'.$row->avatar)}}" class="w-100" alt="..."></td>
                                     <td>{{$row->desc_shoes}}</td>
                                     <td>{{number_format($row->price).' VNĐ' }}</td>
-                                    <td>{{$row->quantity}}</td>
                                     <td>{{$row->category_name}}</td>
                                     <td>{{$row->brand_name}}</td>
                                     <td class="d-flex " style="align-items: center;"><a href="/admin/shoes/editShoes/{{$row->id}}" class="btn bg-lime"><i class="fas fa-edit"></i></a>
+                                    <a href="/admin/shoes/addshoespic/{{$row->id}}" class="btn bg-primary"><i class="fa fa-image" aria-hidden="true"></i></a>
                                     <form action="/admin/shoes/deleteShoes/{{$row->id}}" method="post" onsubmit="return confirm('Bạn có muốn xóa bản ghi {{$row->id}} này không???')">
                                         @method("delete")
                                         @csrf

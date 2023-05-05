@@ -30,7 +30,7 @@
                                 <tr>
                                     <td>{{$row->brand_id}}</td>
                                     <td>{{$row->brand_name}}</td>
-                                    <td style="max-width: 100px;"><img src="{{asset('public/image/'.$row->avatar)}}" class="w-100" alt="..."></td>
+                                    <td style="max-width: 100px;"><img src="{{asset('public/image/'.$row->b_avatar)}}" class="w-100" alt="..."></td>
                                     <td>{{$row->description}}</td>
                                     <td>{{$row->address}}</td>
 

@@ -30,7 +30,7 @@
                                 <tr>
                                     <td>{{$row->category_id}}</td>
                                     <td>{{$row->category_name}}</td>
-                                    <td style="max-width: 100px;"><img src="{{asset('public/image/'.$row->avatar)}}" class="w-100" alt="..."></td>
+                                    <td style="max-width: 100px;"><img src="{{asset('public/image/'.$row->c_avatar)}}" class="w-100" alt="..."></td>
                                     <td>{{$row->description}}</td>
                                     <td class="d-flex " style="align-items: center;"><a href="/editCategory/{{$row->category_id}}" class="btn bg-lime"><i class="fas fa-edit"></i></a>
                                     <form action="/admin/categories/deleteCategory/{{$row->category_id}}" method="post" onsubmit="return confirm('Bạn có muốn xóa bản ghi {{$row->category_id}} này không???')">

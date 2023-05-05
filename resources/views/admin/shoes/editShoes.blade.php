@@ -38,7 +38,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <img src="{{asset('public/image/'.$shoes->avatar)}}" alt="">
+                                <img class="w-100" src="{{asset('public/image/'.$shoes->avatar)}}" alt="">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Description</label>
@@ -50,11 +50,7 @@
                                 <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter price" value="{{$shoes->price}}" name="price">
                                 <span class="text-danger">{{$errors->first("price")}}</span>
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Quantity</label>
-                                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter quantity" value="{{$shoes->quantity}}" name="quantity">
-                                <span class="text-danger">{{$errors->first("quantity")}}</span>
-                            </div>
+                           
                             <div class="form-group">
                         <label>Thể Loại</label>
                         <select class="form-control" name="category">
@@ -83,7 +79,17 @@
                           @endforeach
                         </select>
                       </div>
-                            
+                      <div class="form-group">
+                                <label>Thương hiệu</label>
+                                <select class="form-control" name="gender"> 
+                                    <option @if($shoes->gender===null) selected @endif disabled="">------Dành cho nam hay nữ------</option>
+
+                                    <option @if($shoes->gender===0) selected @endif value="0">Women</option>
+                                    <option @if($shoes->gender===1) selected @endif value="1">Men</option>
+                                    <option @if($shoes->gender===2) selected @endif value="2">For All</option>
+
+                                </select>
+                            </div>
                         </div>
                         <!-- /.card-body -->
 

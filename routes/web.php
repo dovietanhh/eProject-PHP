@@ -2,12 +2,15 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\Cart;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ShoesCategoryController;
+use App\Http\Controllers\ShoesImagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,19 +24,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class,"index"]);
+Route::get('/', [HomeController::class,"index"])->name('home');
 
-Route::get('/dashboard',    [AdminController::class, "index"]);
-Route::get('/AdminLogin',    [AdminController::class, "Beforelogin"]);
+Route::get('/dashboard',    [AdminController::class, "index"])->name('dashboard');
+Route::get('/AdminLogin',    [AdminController::class, "Beforelogin"])->name("login");
 Route::post('/afterLogin',    [AdminController::class, "login"]);
-Route::get('/logoutAdmin',    [AdminController::class, "logoutAdmin"]);
+Route::get('/logoutAdmin',    [AdminController::class, "logoutAdmin"])->name('logout');
 
 
 
 //category
-Route::get('/admin/categories/showCategory',    [CategoryController::class, "showListCategory"]);
+Route::get('/admin/categories/showCategory',    [CategoryController::class, "showListCategory"])->name('Category');
 Route::get('/editCategory/{id}',    [CategoryController::class, "editCategory"]);
-Route::get('/admin/categories/addcategory',    [CategoryController::class, "addCategory"]);
+Route::get('/admin/categories/addcategory',    [CategoryController::class, "addCategory"])->name("addCategory");
 
 Route::post('/admin/categories/saveCategory',    [CategoryController::class, "saveCategory"]);
 Route::patch('/admin/categories/updateCategory/{id}',    [CategoryController::class, "updateCategory"]);
@@ -41,9 +44,9 @@ Route::delete('/admin/categories/deleteCategory/{id}',    [CategoryController::c
 
 
 //brand
-Route::get('/admin/brands/showBrand',    [BrandController::class, "index"]);
+Route::get('/admin/brands/showBrand',    [BrandController::class, "index"])->name("Brand");
 Route::get('/admin/brands/editBrand/{id}',    [BrandController::class, "edit"]);
-Route::get('/admin/brands/addBrand',    [BrandController::class, "create"]);
+Route::get('/admin/brands/addBrand',    [BrandController::class, "create"])->name("addBrand");
 
 Route::post('/admin/brands/saveBrand',    [BrandController::class, "store"]);
 Route::patch('/admin/brands/updateBrand/{id}',    [BrandController::class, "update"]);
@@ -58,6 +61,30 @@ Route::get('/admin/shoes/addShoes',    [ShoesCategoryController::class, "create"
 Route::post('/admin/shoes/saveShoes',    [ShoesCategoryController::class, "store"]);
 Route::patch('/admin/shoes/updateShoes/{id}',    [ShoesCategoryController::class, "update"]);
 Route::delete('/admin/shoes/deleteShoes/{id}',    [ShoesCategoryController::class, "destroy"]);
+
+
+//shoespic
+Route::get('/admin/shoes/shoespic',    [ShoesImagesController::class, "index"]);
+Route::get('/admin/shoes/addshoespic/{id}',    [ShoesImagesController::class, "create"]);
+Route::get('/admin/shoes/addshoespicOne',    [ShoesImagesController::class, "createOne"])->name("addPicture");
+
+Route::post('/admin/shoes/saveShoespic',    [ShoesImagesController::class, "SaveImage"]);
+
+Route::get('/admin/shoes/editShoespic/{id}',    [ShoesImagesController::class, "edit"]);
+Route::patch('/admin/shoes/updateShoespic/{id}',    [ShoesImagesController::class, "update"]);
+Route::delete('/admin/shoes/deleteShoespic/{id}',    [ShoesImagesController::class, "destroy"]);
+
+
+//shoesSize
+Route::get('/admin/shoes/SizeShoes',    [ShoesCategoryController::class, "shoesSize"])->name("size");
+
+Route::get('/admin/shoes/addSizeShoes',    [ShoesCategoryController::class, "createSizeShoes"])->name("addsize");
+Route::post('/admin/shoes/saveShoesSize',    [ShoesCategoryController::class, "saveSizeShoes"]);
+
+Route::get('/admin/shoes/editShoesSize/{id}',    [ShoesCategoryController::class, "editSizeShoes"]);
+Route::post('/admin/shoes/updateShoesSize/{id}',    [ShoesCategoryController::class, "updateSizeShoes"]);
+
+
 
 //employees
 
@@ -77,25 +104,27 @@ Route::post("/admin/employees/update_roles/{id}",[AdminController::class,"update
 
 
 
-//employees
+//Customer
 
-Route::get('/admin/customers/showCustomers',    [CustomerController::class, "index"]);
+Route::get('/admin/customers/showCustomers',    [CustomerController::class, "index"])->name('Customers');
 Route::delete('/admin/customers/deleteCustomer/{id}',    [CustomerController::class, "destroy"]);
 
 
 
 //order 
 
-Route::get('/admin/orderdetails/showOrderdetail',    [OrderController::class, "index"]);
+Route::get('/admin/orderdetails/showOrderdetail',    [OrderController::class, "index"])->name('Order');
+Route::get('/admin/order_detail/{id}',    [OrderController::class, "show"]);
+
+
+
+
 // <<<<<<< HEAD:routes/web.php
 Route::delete('/admin/orderdetails/deleteOrderdetail/{id}',    [OrderController::class, "destroy"]);
 // =======
-Route::delete('/admin/orderdetails/deleteOrderdetail/{id}',    [CustomerController::class, "destroy"]);
 
 //Men Page
-Route::get('/men', function () {
-    return view('client.men');
-})->name('men');
+Route::get('/men', [HomeController::class,"MenShoes"])->name('men');
 
 //Product Detail Page
 Route::get('/product_detail', function () {
@@ -103,14 +132,16 @@ Route::get('/product_detail', function () {
 })->name('product_detail');
 
 //Women Page
-Route::get('/women', function () {
-    return view('client.women');
-})->name('women');
+Route::get('/women', [HomeController::class,"WomenShoes"])->name('women');
 
 //About Page
 Route::get('/about', function () {
-    return view('client.about');
+    return view('client.about');    
 })->name('about');
+
+Route::get('/profile', function () {
+    return view('client.profile');
+})->name('profile');
 
 //Add to wishlist Page
 Route::get('/add_to_wishlist', function () {
@@ -118,14 +149,20 @@ Route::get('/add_to_wishlist', function () {
 })->name('add_to_wishlist');
 
 //Cart Page
-Route::get('/cart', function () {
-    return view('client.cart');
-})->name('cart');
+Route::get('/cart', [Cart::class,"index"])->name('cart');
+Route::post('/cart/addCart', [Cart::class,"addCart"]);
+Route::patch('/Cart/UpdateCart/{id}', [Cart::class,"UpdateCart"]);
+Route::delete('/Cart/DeleteCart/{id}', [Cart::class,"DeleteCart"]);
+
+
+
 
 //Checkout Page
-Route::get('/checkout', function () {
-    return view('client.checkout');
-})->name('checkout');
+Route::get('/checkout', [CheckoutController::class,"index"])->name('checkout');
+Route::post('/checkout/order', [CheckoutController::class,"checkoutTwo"]);
+Route::post('/checkout/orderdetail/{id}', [CheckoutController::class,"checkoutThree"]);
+
+
 
 //Contact Page
 Route::get('/contact', function () {
@@ -137,10 +174,28 @@ Route::get('/detail-product/{id}',[HomeController::class,"ProductDetai"]);
 
 
 //Order Complete Page
-Route::get('/order_complete', function () {
-    return view('client.order_complete');
-})->name('order_complete');
+Route::get('/order_complete', [CheckoutController::class,"Done"])->name('order_complete');
+
+//Order client Page
+Route::get('/my_order', [CheckoutController::class,"myOrder"])->name('My_Order');
+Route::post('/order_status/{id}', [CheckoutController::class,"Order_status"])->name('Order_status');
+
 
 //Home Page
 Route::get('/welcome', [HomeController::class,"index"]);
 // >>>>>>> 1b91cd5de4c098db1d90469263b80cee649e8b7f:Đông/routes/web.php
+
+//search
+
+Route::get('/search', [HomeController::class,"search"])->name('search');
+
+//Login Client
+Route::get('/Customer/Login', [HomeController::class,"login"]);
+Route::post('/Customer/SignIn', [HomeController::class,"SignIn"]);
+Route::get('/Customer/Logout', [HomeController::class,"logout"]);
+
+
+//discount_rate
+Route::post('/discount_rate', [Cart::class,"discount_rate"]);
+
+
